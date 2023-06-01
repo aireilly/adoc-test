@@ -1,0 +1,35 @@
+name: Build and deploy website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Extract assets
+        run: docker cp $(docker run --detach quay.io/redhat-docs/redhat-docs-template):/assets ./assets
+
+      - name: Build Asciidoc
+        uses: docker://quay.io/redhat-docs/redhat-docs-template
+        with:
+          args: test.adoc
+
+      - name: Copy output to docs/
+        run: |
+          mkdir docs
+          cp -r assets/ docs/assets
+          cp -r images/ docs/images
+          mv index.html docs/
+
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
