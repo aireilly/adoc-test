@@ -756,6 +756,18 @@ h6 {
     margin-top: -75px;
 }
 
+/* Fix the example block css */
+.exampleblock>.content>h1,
+.exampleblock>.content>h2,
+.exampleblock>.content>h3,
+.exampleblock>.content>h4,
+.exampleblock>.content>h5,
+.exampleblock>.content>h6 {
+    line-height: 1.4;
+    padding-top: unset;
+    margin-top: unset;
+}
+
 object,
 svg {
     display: inline-block;
@@ -2229,28 +2241,28 @@ a span.icon>.fa {
 
 .admonitionblock td.icon .icon-note:before {
     content: "\f05a";
-    color: #1f608b
+    color: white
 }
 
 .admonitionblock td.icon .icon-tip:before {
     content: "\f0eb";
     text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8);
-    color: #111
+    color: white
 }
 
 .admonitionblock td.icon .icon-warning:before {
     content: "\f071";
-    color: #bf6900
+    color: white
 }
 
 .admonitionblock td.icon .icon-caution:before {
     content: "\f06d";
-    color: #bf3400
+    color: white
 }
 
 .admonitionblock td.icon .icon-important:before {
     content: "\f06a";
-    color: #bf0000
+    color: white
 }
 
 .conum[data-value] {
@@ -2562,36 +2574,12 @@ table.tableblock.grid-all td.tableblock {
     font-weight: bold
 }
 
-.admonitionblock.important>table {
+.admonitionblock.warning>table {
     background-color: #ffd6ca
 }
 
-.admonitionblock.important>table td.icon {
-    background-color: #fd3900;
-    width: 100%;
-    text-align: left;
-    padding-left: 2em
-}
-
-.admonitionblock.important>table td.icon i.icon-important::before {
-    color: white
-}
-
-.admonitionblock.important>table td.icon i.icon-important::after {
-    color: white;
-    content: "Important";
-    padding-left: 1em;
-    font-family: "Lato", "Roboto", "Arial", "Helvetica Neue", sans-serif;
-    font-size: 0.9em;
-    font-weight: bold
-}
-
-.admonitionblock.warning>table {
-    background-color: #ffedcc
-}
-
 .admonitionblock.warning>table td.icon {
-    background-color: orange;
+    background-color: #fd3900;
     width: 100%;
     text-align: left;
     padding-left: 2em
@@ -2604,6 +2592,30 @@ table.tableblock.grid-all td.tableblock {
 .admonitionblock.warning>table td.icon i.icon-warning::after {
     color: white;
     content: "Warning";
+    padding-left: 1em;
+    font-family: "Lato", "Roboto", "Arial", "Helvetica Neue", sans-serif;
+    font-size: 0.9em;
+    font-weight: bold
+}
+
+.admonitionblock.important>table {
+    background-color: #ffedcc
+}
+
+.admonitionblock.important>table td.icon {
+    background-color: orange;
+    width: 100%;
+    text-align: left;
+    padding-left: 2em
+}
+
+.admonitionblock.important>table td.icon i.icon-important::before {
+    color: white
+}
+
+.admonitionblock.important>table td.icon i.icon-important::after {
+    color: white;
+    content: "Important";
     padding-left: 1em;
     font-family: "Lato", "Roboto", "Arial", "Helvetica Neue", sans-serif;
     font-size: 0.9em;
@@ -2738,7 +2750,7 @@ h6>a.link:hover:after {
 
 }
 
-/*Top navigation*/
+/* Top navigation */
 .navbar {
     background-color: #333;
     overflow: hidden;
@@ -2765,7 +2777,7 @@ h6>a.link:hover:after {
     transform: translateY(0);
 }
 
-/*Copy code*/
+/* Copy code */
 div.content>pre>button {
     display: none;
 }*
@@ -2786,7 +2798,7 @@ div.listingblock>div>pre.rouge>button {
     border-radius: 4px;
 }
 
-/*GitHub link*/
+/* GitHub link */
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out
 }
@@ -2818,7 +2830,7 @@ div.listingblock>div>pre.rouge>button {
     }
 }
 
-/*Active TOC item*/
+/* Active TOC item tweak */
 .active {
     border-right: 3px solid #2e2e2e;
     font-weight: bold;
@@ -4159,7 +4171,7 @@ RAM
 <div id="footer">
 <div id="footer-text">
 Version 1.5<br>
-Last updated 2023-06-01 19:51:53 UTC
+Last updated 2023-06-07 09:15:46 UTC
 </div>
 </div>
 <!-- Nav bar -->
